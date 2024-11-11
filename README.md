@@ -3,7 +3,7 @@
 
 ## 1.使用技術
 Spring Boot
-
+Maven 
 ## 2.安裝指南
 > 請確保您的環境中安裝有 Java 22 及 Maven 3 以上版本
 執行步驟
