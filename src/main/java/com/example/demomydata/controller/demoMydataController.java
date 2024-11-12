@@ -87,7 +87,7 @@ public class demoMydataController {
         if (token ==null){
             HttpHeaders responseHeaders = new HttpHeaders();
             return new ResponseEntity<IntrospectEntity>(new IntrospectEntity(), responseHeaders, HttpStatus.UNAUTHORIZED);
-        }else if (token != accessToken){
+        }else if (!token.equals(accessToken)){
             HttpHeaders responseHeaders = new HttpHeaders();
             return new ResponseEntity<IntrospectEntity>(new IntrospectEntity(), responseHeaders, HttpStatus.UNAUTHORIZED);
         }

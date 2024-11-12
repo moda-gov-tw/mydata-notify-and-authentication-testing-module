@@ -12,6 +12,7 @@
 	<artifactId>demomydata</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>demomydata</name>
+	<packaging>war</packaging>
 	<description>Demo project for mydata</description>
 	<url/>
 	<licenses>
@@ -27,7 +28,7 @@
 		<url/>
 	</scm>
 	<properties>
-		<java.version>23</java.version>
+		<java.version>22</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -37,6 +38,17 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>spring-webmvc</artifactId>
+					<groupId>org.springframework</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>6.1.14</version>
 		</dependency>
 
 		<dependency>

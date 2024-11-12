@@ -6,7 +6,7 @@ Spring Boot
 > 請確保您的環境中安裝有 Java 22 及 Maven 3 以上版本
 執行步驟
 ```bat
-> git clone https://gitlab.iisigroup.com/ps150/g-p231301/modapc/mydata-notify-and-authentication-testing-module.git
+> git clone https://github.com/TsubasaRush/mydata-notify-and-authentication-testing-module.git
 > cd mydata-notify-and-authentication-testing-module
 > mvn clean install
 > java -jar target/mydata-notify-and-authentication-testing-module-0.0.1-SNAPSHOT.jar
@@ -24,10 +24,21 @@ Spring Boot
 ## 3.使用情境範例
 - 1.mydata 請求呼叫
 > 模擬mydata請求呼叫指定url
+mydata呼叫請求利用header進行資料交換
+其中的客製化header參數設定可於mydataHeaderInfo.properties進行設定，範例使用INQ_YR,INQ_DATE
+可於mydataTest.properties進行GET或POST模擬請求的開關設定，同時也能設定呼叫指定的API URL及header中所固定帶入之驗證token
+預設60秒進行一次呼叫，並且會於console列印回傳內容。
 - 2.mydata資料驗證
 > 使用程式組成HTTP請求呼叫http://localhost:8080/connect/introspect?token=token
+驗證之token會帶在url參數中，此API主要為模擬設計之DP-API收到Mydata請求後所需進行的token驗證
+驗證使用之token即為1.中所使用的驗證token
+若正常會回傳200 OK，若異常則會回傳401 未經授權異常。
 - 3.mydata資料交換
 > 使用程式組成HTTP請求呼叫http://localhost:8080/connect/userinfo
+模擬mydata流程中token驗證結束後DP-API透過呼叫使用者資料交換API以取得使用者資訊的行為
+會先進行token驗證
+驗證使用之token即為1.中所使用的驗證token，若異常則會回傳401 未經授權異常。
+若無異常則會回傳可於mydataUserInfo.properties設定之User資料物件以利DP-API利用使用者資訊進行進一步的資料查詢。
 
 
 
