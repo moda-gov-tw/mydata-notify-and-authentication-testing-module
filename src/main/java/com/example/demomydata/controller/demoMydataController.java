@@ -105,7 +105,7 @@ public class demoMydataController {
         String accessToken = ResourceBundle.getBundle("mydataTest").getString("token");
         Set<String> UserInfoData = ResourceBundle.getBundle("mydataUserInfo").keySet();
         //TODO:驗證資訊
-        String[] resourceT=resource.split("::");
+        String[] resourceT=headers.get("Authorization").split("Bearer ");
         String token= resourceT[1];
         if (token ==null){
             HttpHeaders responseHeaders = new HttpHeaders();
