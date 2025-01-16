@@ -117,25 +117,25 @@ public class demoMydataController {
         //TODO:回傳使用者資料
         HttpHeaders responseHeaders = new HttpHeaders();
         //TODO:填入使用者資料
-        UserInfoEntity userInfo =new UserInfoEntity();
-        userInfo.setSub(ResourceBundle.getBundle("mydataUserInfo").getString("sub"));
-        userInfo.setName(ResourceBundle.getBundle("mydataUserInfo").getString("name"));
-        userInfo.setPreferredUsername(ResourceBundle.getBundle("mydataUserInfo").getString("preferredUsername"));
-        userInfo.setAccountName(ResourceBundle.getBundle("mydataUserInfo").getString("accountName"));
-        userInfo.setUid(ResourceBundle.getBundle("mydataUserInfo").getString("uid"));
-        userInfo.setIsValidUid(ResourceBundle.getBundle("mydataUserInfo").getString("isValidUid"));
-        userInfo.setBirthdate(ResourceBundle.getBundle("mydataUserInfo").getString("birthdate"));
-        userInfo.setGender(ResourceBundle.getBundle("mydataUserInfo").getString("gender"));
-        userInfo.setEmail(ResourceBundle.getBundle("mydataUserInfo").getString("email"));
-        userInfo.setEmailVerified(Boolean.parseBoolean(ResourceBundle.getBundle("mydataUserInfo").getString("emailVerified")));
-        userInfo.setAccount(ResourceBundle.getBundle("mydataUserInfo").getString("account"));
-        userInfo.setProfile(ResourceBundle.getBundle("mydataUserInfo").getString("profile"));
-        userInfo.setIdp(ResourceBundle.getBundle("mydataUserInfo").getString("idp"));
-        userInfo.setX509type(ResourceBundle.getBundle("mydataUserInfo").getString("x509type"));
-        userInfo.setAmr(ResourceBundle.getBundle("mydataUserInfo").getString("amr"));
-        userInfo.setPhoneNumber(ResourceBundle.getBundle("mydataUserInfo").getString("phoneNumber"));
-        userInfo.setBoxcheck(Boolean.parseBoolean(ResourceBundle.getBundle("mydataUserInfo").getString("boxcheck")));
-        return new ResponseEntity<UserInfoEntity>(userInfo, responseHeaders, HttpStatus.OK);
+        UserInfoEntity Info =new UserInfoEntity();
+        Info.setSub(ResourceBundle.getBundle("mydataUserInfo").getString("sub"));
+        Info.setName(ResourceBundle.getBundle("mydataUserInfo").getString("name"));
+        Info.setPreferredUsername(ResourceBundle.getBundle("mydataUserInfo").getString("preferredUsername"));
+        Info.setAccountName(ResourceBundle.getBundle("mydataUserInfo").getString("accountName"));
+        Info.setUid(ResourceBundle.getBundle("mydataUserInfo").getString("uid"));
+        Info.setIsValidUid(ResourceBundle.getBundle("mydataUserInfo").getString("isValidUid"));
+        Info.setBirthdate(ResourceBundle.getBundle("mydataUserInfo").getString("birthdate"));
+        Info.setGender(ResourceBundle.getBundle("mydataUserInfo").getString("gender"));
+        Info.setEmail(ResourceBundle.getBundle("mydataUserInfo").getString("email"));
+        Info.setEmailVerified(Boolean.parseBoolean(ResourceBundle.getBundle("mydataUserInfo").getString("emailVerified")));
+        Info.setAccount(ResourceBundle.getBundle("mydataUserInfo").getString("account"));
+        Info.setProfile(ResourceBundle.getBundle("mydataUserInfo").getString("profile"));
+        Info.setIdp(ResourceBundle.getBundle("mydataUserInfo").getString("idp"));
+        Info.setX509type(ResourceBundle.getBundle("mydataUserInfo").getString("x509type"));
+        Info.setAmr(ResourceBundle.getBundle("mydataUserInfo").getString("amr"));
+        Info.setPhoneNumber(ResourceBundle.getBundle("mydataUserInfo").getString("phoneNumber"));
+        Info.setBoxcheck(Boolean.parseBoolean(ResourceBundle.getBundle("mydataUserInfo").getString("boxcheck")));
+        return new ResponseEntity<UserInfoEntity>(Info, responseHeaders, HttpStatus.OK);
 
     }
 }
